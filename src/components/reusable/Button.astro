@@ -1,0 +1,21 @@
+---
+interface Props {
+    bgColor?: string;
+    textColor?: string;
+    className?: string;
+    paddingX?: string;
+    paddingY?: string;
+}
+
+const { bgColor = "bg-black", textColor = "text-white", paddingX = "px-4", paddingY = "py-2", className} = Astro.props;
+
+---
+<button class={`
+${bgColor} 
+${textColor}
+${className}
+${paddingX} 
+${paddingY}
+transition-all duration-300 cursor-pointer`}>
+    <slot />
+</button>
