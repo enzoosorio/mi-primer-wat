@@ -1,0 +1,31 @@
+---
+interface StickyNotesProps {
+  title: string;
+  bgColor?: string;
+  textColor?: string;
+}
+
+const {
+  title,
+  bgColor = "bg-white",
+  textColor = "text-black",
+} = Astro.props as StickyNotesProps;
+---
+
+<div
+  class={`relative w-[330px] h-[180px] cursor-pointer flex flex-row items-center justify-center rounded-md ${bgColor} ${textColor} `}
+>
+  <p class="text-[2.5rem] font-bold font-roboto">{title}</p>
+</div>
+<script>
+  const stickyNotes = document.querySelectorAll(".stickyNotes");
+  stickyNotes.forEach((stickyNote) => {
+    stickyNote.addEventListener("mouseover", () => {
+      stickyNote.classList.add("bg-white");
+    });
+
+    stickyNote.addEventListener("mouseleave", () => {
+      stickyNote.classList.remove("bg-white");
+    });
+  });
+</script>

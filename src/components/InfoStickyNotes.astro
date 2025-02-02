@@ -1,5 +1,52 @@
 ---
+import StickyNotes from "./reusable/StickyNotes.astro";
 
+const stickyNotes = [
+  {
+    title: "Inversión",
+    bgColor: "bg-yellow",
+  },
+  {
+    title: "Entorno",
+    bgColor: "bg-yellow",
+  },
+  {
+    title: "Lo nuevo",
+    bgColor: "bg-yellow",
+  },
+  {
+    title: "Temporada",
+    bgColor: "bg-primary-blue",
+  },
+  {
+    title: "Tiempo",
+    bgColor: "bg-primary-blue",
+  },
+  {
+    title: "Actividades",
+    bgColor: "bg-primary-blue",
+  },
+  {
+    title: "Trabajo",
+    bgColor: "bg-rose",
+  },
+  {
+    title: "Esfuerzo",
+    bgColor: "bg-rose",
+  },
+  {
+    title: "Amigos",
+    bgColor: "bg-rose",
+  },
+];
 ---
 
-<h1>InfoStickyNotes</h1>
+<section
+  class="w-full flex flex-row items-center justify-center gap-12 mt-56 mb-40 welcomeToMain"
+>
+  <div
+    class="w-full flex flex-row items-center justify-center flex-wrap gap-16 my-20"
+  >
+    {stickyNotes.map((stickyNote) => <StickyNotes {...stickyNote} />)}
+  </div>
+</section>
