@@ -15,6 +15,7 @@
   --font-delicious-small-caps: "DeliciousSmallCaps", serif;
   --color-regal-blue: #243c5a;
   --color-rose: #ff5964;
+  --color-gray : #595959;
   --color-yellow: #ffe74c;
   --color-primary-blue : #57B8D0;
   --color-primary-gray : #595959;
@@ -108,8 +109,44 @@
   display: none;
 }
 
-.alegriaContainer {
-  background-image: url("/images/does-it-worth/bg-alegria.png");
-  background-size: cover;
-  background-position: center;
+.image-alegria {
+  -webkit-mask-image: linear-gradient(
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.9) 50%,
+    rgba(0, 0, 0, 0.9) 80%,
+    rgba(255, 255, 255, 0) 100%,
+  );
+
+  mask-image: linear-gradient(
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.9) 50%,
+    rgba(0, 0, 0, 0.9) 80%,
+    rgba(255, 255, 255, 0) 100%,
+  );
 }
+
+.timelineContainer{
+  position: relative;
+  background: red;
+  min-height: 600px;
+}
+
+.timelineContainer::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  min-height: 100%;
+  background-color: #595959;
+  border-radius: 10px;
+  z-index: 10;
+}
+
+.bg-textura{
+  background-image: url("/images/timeline/bg-contenido.png");
+  background-position: center;
+  background-size: cover;
+}
+

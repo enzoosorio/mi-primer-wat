@@ -1,0 +1,44 @@
+{
+    "timeline": [
+        {
+            "date": "6 de Noviembre del 2024",
+            "content" : [
+                {
+                    "image": "/images/timeline/foto-1.png",
+                    "titleImage": "Primer dia",
+                    "description": "¿Cuándo AAAAAA y cuándo terminaré de trabajar en este blog?"
+                },
+                {
+                    "image": "/images/timeline/foto-2.png",
+                    "titleImage": "Segundo dia",
+                    "description": "¿Cuándo EEEEEEEE y cuándo terminaré de trabajar en este blog?"
+                },
+                {
+                    "image": "/images/timeline/foto-1.png",
+                    "titleImage": "Tercer dia",
+                    "description": "¿Cuándo UUUUUUU y cuándo terminaré de trabajar en este blog?"
+                }
+            ]
+        },
+        {
+            "date": "10 de Noviembre del 2024",
+            "content" : [
+                {
+                    "image": "/images/timeline/foto-4.jpeg",
+                    "titleImage": "Buen paisaje",
+                    "description": "¿Cuándo empezó y cuándo terminaré de trabajar en este blog? <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium rerum vero ipsa neque dignissimos dolores tempora quasi obcaecati, vel velit ab esse veniam, repellat dicta quo voluptas commodi voluptatibus architecto. Aliquam porro soluta repudiandae consequuntur aut expedita quam sit ullam nisi repellat! Voluptatem nisi illum eum magnam! Et officia quos dicta alias. Aperiam, amet soluta? Doloribus excepturi ipsa, minima rem asperiores fugit repellat! Aliquid iste ullam magni excepturi molestiae porro, tempore molestias pariatur saepe nemo autem? Ullam aperiam sit mollitia voluptas placeat facere eum maiores modi repellendus error obcaecati est asperiores enim quia, labore incidunt ducimus laboriosam? Nulla, illum commodi? ¿Cuándo empezó y cuándo terminaré de trabajar en este blog? <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium rerum vero ipsa neque dignissimos dolores tempora quasi obcaecati, vel velit ab esse veniam, repellat dicta quo voluptas commodi voluptatibus architecto. Aliquam porro soluta repudiandae consequuntur aut expedita quam sit ullam nisi repellat! Voluptatem nisi illum eum magnam! Et officia quos dicta alias. Aperiam, amet soluta? Doloribus excepturi ipsa, minima rem asperiores fugit repellat! Aliquid iste ullam magni excepturi molestiae porro, tempore molestias pariatur saepe nemo autem? Ullam aperiam sit mollitia voluptas placeat facere eum maiores modi repellendus error obcaecati est asperiores enim quia, labore incidunt ducimus laboriosam? Nulla, illum commodi?"
+                },
+                {
+                    "image": "/images/timeline/foto-5.jpeg",
+                    "titleImage": "El diavlo",
+                    "description": "¿Cuándo empezó y cuándo terminaré de trabajar en este blog?"
+                },
+                {
+                    "image": "/images/timeline/foto-6.jpeg",
+                    "titleImage": "Colorado",
+                    "description": "¿Cuándo empezó y cuándo terminaré de trabajar en este blog?"
+                }
+            ]
+        }
+    ]
+}
