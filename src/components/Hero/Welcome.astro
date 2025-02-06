@@ -1,15 +1,16 @@
 ---
 import { Image } from "astro:assets";
-import CopoDeNieve from '../../public/svgs/copo-de-nieve.svg'
-import CopoDeNieveConGradiente from '../../public/svgs/copo-de-nieve-con-gradiente.svg'
-import Button from "./reusable/Button.astro";
-import ChevronDown from '../../public/svgs/Chevron Down.svg'
+import CopoDeNieve from '../../../public/svgs/copo-de-nieve.svg'
+import CopoDeNieveConGradiente from '../../../public/svgs/copo-de-nieve-con-gradiente.svg'
+import Button from "../reusable/Button.astro";
+import ChevronDown from '../../../public/svgs/Chevron Down.svg'
+import { fade } from "astro:transitions";
 const VALORACION = 3
 
 ---
 
 <section class="relative w-full my-10 welcomeToMain flex flex-col items-center justify-center gap-12 ">
-    <div class="flex flex-row items-center justify-center gap-24  w-max mx-auto">
+    <div transition:animate={fade({ duration: '0.4s' })} class="flex flex-row items-center justify-center gap-24  w-max mx-auto">
         <div class="flex flex-col justify-end items-end gap-8 ">
             <h1 class="text-6xl font-bold text-right w-[14ch] tracking-tighter">Work and Travel en Montana</h1>
             <p class="font-nunito text-lg tracking-tighter w-[40ch] text-right">Un invierno con frío extremo. Paisajes únicos y nuevos amigos de otros países </p>
@@ -36,12 +37,40 @@ const VALORACION = 3
     </Button>
 </section>
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-  const button = document.querySelector('.animationButtonBounce');
+
+function scrollToElement(){
+    const button = document.querySelector('.animationButtonBounce');
   if (button) {
+    button.addEventListener("click", () => {
+        window.scroll({
+        top: 845,
+        left: 0,
+        behavior: 'smooth'
+      })
+    });
     button.addEventListener('animationend', () => {
       button.classList.add('infinite');
     });
   }
-});
+
+  document.addEventListener("astro:before-swap", () => {
+    button?.removeEventListener("click", () => {
+        window.scroll({
+        top: 845,
+        left: 0,
+        behavior: 'smooth'
+      })
+    });
+    button?.removeEventListener('animationend', () => {
+      button.classList.add('infinite');
+    });
+  });
+}
+
+scrollToElement();
+
+document.addEventListener("astro:after-swap", () => {
+   scrollToElement();
+})
+
 </script>

@@ -18,7 +18,10 @@
     "astro": "^5.2.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tailwindcss": "^4.0.1"
+    "tailwindcss": "^4.0.1",
+    "tilt.js": "^1.2.1",
+    "use-debounce": "^10.0.4",
+    "vanilla-tilt": "^1.8.1"
   },
   "devDependencies": {
     "prettier": "^3.4.2",

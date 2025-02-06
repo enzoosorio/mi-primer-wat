@@ -7,25 +7,25 @@ const photosMap: Photo[][] = [
     {
       src: "/images/cardSliderHorizontal/first/img-arriba-izquierda.png",
       alt: "photo-1",
-      width: 400,
+      width: 500,
       height: 300,
     },
     {
       src: "/images/cardSliderHorizontal/first/img-arriba-derecha.png",
       alt: "photo-2",
-      width: 400,
+      width: 500,
       height: 300,
     },
     {
       src: "/images/cardSliderHorizontal/first/img-abajo-izquierda.png",
       alt: "photo-3",
-      width: 400,
+      width: 500,
       height: 300,
     },
     {
       src: "/images/cardSliderHorizontal/first/img-abajo-derecha.png",
       alt: "photo-4",
-      width: 400,
+      width: 500,
       height: 300,
     },
   ],
@@ -33,25 +33,25 @@ const photosMap: Photo[][] = [
     {
       src: "/images/cardSliderHorizontal/first/img-arriba-izquierda.png",
       alt: "photo-1",
-      width: 400,
+      width: 500,
       height: 300,
     },
     {
       src: "/images/cardSliderHorizontal/first/img-arriba-izquierda.png",
       alt: "photo-2",
-      width: 400,
+      width: 500,
       height: 300,
     },
     {
       src: "/images/cardSliderHorizontal/first/img-abajo-izquierda.png",
       alt: "photo-3",
-      width: 400,
+      width: 500,
       height: 300,
     },
     {
       src: "/images/cardSliderHorizontal/first/img-abajo-derecha.png",
       alt: "photo-4",
-      width: 400,
+      width: 500,
       height: 300,
     },
   ],
@@ -59,29 +59,36 @@ const photosMap: Photo[][] = [
     {
       src: "/images/cardSliderHorizontal/first/img-arriba-izquierda.png",
       alt: "photo-1",
-      width: 400,
+      width: 500,
       height: 300,
     },
     {
       src: "/images/cardSliderHorizontal/first/img-arriba-izquierda.png",
       alt: "photo-2",
-      width: 400,
+      width: 500,
       height: 300,
     },
     {
       src: "/images/cardSliderHorizontal/first/img-abajo-izquierda.png",
       alt: "photo-3",
-      width: 400,
+      width: 500,
       height: 300,
     },
     {
       src: "/images/cardSliderHorizontal/first/img-abajo-derecha.png",
       alt: "photo-4",
-      width: 400,
+      width: 500,
       height: 300,
     },
   ],
 ];
+
+const albumMessage = [
+  "Vacaciones diferentes :)",
+  "Experiencias diferentes :)",
+  "Proyectos diferentes :)",
+]
+
 
 export const SliderHorizontal = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -99,15 +106,15 @@ export const SliderHorizontal = () => {
   return (
     <div className="relative flex items-center justify-center gap-24 w-max my-20">
       {/* Contenedor principal que aloja todos los álbumes */}
-      <div className="w-[816px] mx-auto flex overflow-hidden">
+      <div className="w-[1016px] mx-auto flex overflow-hidden">
         <div
           className="flex transition-transform duration-400 ease-in-out"
-          style={{ transform: `translateX(-${currentIndex * 816 }px)` }}
+          style={{ transform: `translateX(-${currentIndex * 1016 }px)` }}
         >
           {photosMap.map((album, index) => (
-            <div key={index} className="relative flex flex-wrap w-[816px] justify-center gap-4">
-              <p className="text-5xl w-max font-bold absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-58%]">
-                {`vacaciones diferentes :)`}
+            <div key={index} className="relative flex flex-wrap w-[1016px] justify-center gap-4">
+              <p className="text-5xl w-max font-bold absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-70%]">
+                {albumMessage[index]}
               </p>
               {album.map((photo, photoIndex) => (
                 <img

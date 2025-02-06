@@ -1,0 +1,55 @@
+
+<div class="flex flex-col items-center justify-center gap-12 w-full bg-gray-200/75 rounded-xl p-5 shadow-xl">
+    <div class="flex flex-col items-center justify-center gap-4 w-full">
+        <h1 class="text-3xl font-bold font-nunito mt-6">Banco de Preguntas</h1>
+        <p class="text-base font-nunito">Anímate a dejar tu pregunta</p>
+        </div>
+        <form id="form-preguntas" class="flex flex-col items-center justify-center gap-8 w-full">
+            <div class="w-full flex flex-col items-start justify-start gap-4">
+                <label for="nombre" class="text-lg font-roboto text-right">Tu nombre</label>
+                <input id="nombre" type="text" name="usuario" class="w-full rounded-lg px-2 py-4 font-roboto text-black bg-white/75 outline-none shadow-sm max-w-[400px] " placeholder="Escribe tu pregunta aquí..." />
+            </div>
+            <div class="w-full flex flex-col items-start justify-start gap-4">
+                <label for="tipoPregunta" class="text-lg font-roboto text-right">¿Respuesta pública o privada?</label>
+                <select id="tipoPregunta" name="tipoPregunta" class="w-full rounded-lg px-2 py-4 font-roboto text-black bg-white/75 outline-none shadow-sm max-w-[400px] ">
+                    <option value="publico">Público</option>
+                    <option value="privado">Privado</option>
+                </select>
+            </div>
+            <div class="w-full flex flex-col items-start justify-start gap-4">
+                <label for="pregunta" class="text-lg font-roboto text-right">Tu pregunta</label>
+                <textarea id="pregunta" name="pregunta" class="w-full rounded-lg  font-roboto text-black bg-white/75 outline-none shadow-sm  resize-none min-h-[150px]" placeholder="Escribe tu pregunta aquí..." />
+            </div>
+            <div class="flex flex-row items-center justify-center gap-8 w-full">
+                <button type="button" class="submitButton w-full text-xl font-delicious-small-caps rounded-lg px-2 py-4 font-bold cursor-pointer text-black bg-yellow/75 outline-none shadow-sm max-w-[400px] transition-all duration-300 ease-in-out hover:bg-rose">Cerrar</button>
+                <button type="button" class="submitButton w-full text-xl font-delicious-small-caps rounded-lg px-2 py-4 font-bold cursor-pointer text-black bg-yellow/75 outline-none shadow-sm max-w-[400px] transition-all duration-300 ease-in-out hover:bg-rose">Preguntar</button>
+            </div>
+        </form>
+</div>
+
+<script>
+    function submitForm(){
+        const form = document.getElementById("form-preguntas") as HTMLFormElement;
+        const submitButton = document.querySelector("submitButton");
+        if(!form || !submitButton) return;
+        submitButton.addEventListener("click", () => {
+            const formData = new FormData(form);
+            console.log(formData.get("usuario"));
+            return
+        });
+
+        document.addEventListener("astro:before-swap", () => {
+            submitButton.addEventListener("click", () => {
+                const formData = new FormData(form);
+                alert(formData.get("usuario"));
+            return
+        });
+        });
+    }
+
+    submitForm();
+
+    document.addEventListener("astro:after-swap", () => {
+        submitForm();
+    });
+</script>

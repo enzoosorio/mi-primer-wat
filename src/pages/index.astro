@@ -1,21 +1,17 @@
 ---
-import Welcome from "../components/Welcome.astro";
+import Welcome from "../components/Hero/Welcome.astro";
 import Layout from "../layouts/Layout.astro";
-import Header from "@components/Header.astro";
-import HorizontalSliderPhotos from "@components/HorizontalSliderPhotos.astro";
-import InfoStickyNotes from "@components/InfoStickyNotes.astro";
-import PersonalExperience from "@components/PersonalExperience.astro";
-import Projects from "@components/Projects.astro";
-import Footer from "@components/Footer.astro";
+import HorizontalSliderPhotos from "@components/Hero/HorizontalSliderPhotos.astro";
+import InfoStickyNotes from "@components/Hero/InfoStickyNotes.astro";
+import PersonalExperience from "@components/Hero/PersonalExperience.astro";
 ---
 
 <Layout title="Work and Travel | Enzo">
-  <Header />
   <Welcome />
   <HorizontalSliderPhotos />
   <InfoStickyNotes />
   <PersonalExperience />
-  <Projects />
-  <Footer />
+  <!-- <Projects /> -->
+  <div class="pb-48"></div>
 </Layout>
 

@@ -1,0 +1,15 @@
+---
+import ChooseLayoutPhotos from "@components/photos/ChooseLayoutPhotos.astro";
+import Layout from "@layouts/Layout.astro";
+import MainPhotos from "@components/photos/MainPhotos.astro";
+---
+
+<Layout title="Album Photos | Enzo">
+  <section
+    class="w-full flex flex-col items-center justify-center gap-12 my-12 welcomeToMain"
+  >
+  <MainPhotos/>
+  <ChooseLayoutPhotos/>
+</section>
+  <div class="pb-32"></div>
+</Layout>

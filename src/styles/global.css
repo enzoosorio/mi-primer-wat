@@ -1,9 +1,18 @@
 @import "tailwindcss";
 @import '@fontsource-variable/nunito';
 
+@font-face {
+  font-family: 'DeliciousSmallCaps';
+  src: url('/fonts/Delicious-SmallCaps.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   --font-roboto: "Roboto", sans-serif;
   --font-nunito: "Nunito Variable", serif;
+  --font-delicious-small-caps: "DeliciousSmallCaps", serif;
   --color-regal-blue: #243c5a;
   --color-rose: #ff5964;
   --color-yellow: #ffe74c;
@@ -20,7 +29,11 @@
 }
 
 .headerBgGradientDark {
-  background-color: rgba(15, 170, 184, 0.80);
+  background-color: rgba(19, 140, 151, 0.8);
+}
+
+.footerBgGradientDark {
+  background-color: rgba(19, 140, 151, 0.977);
 }
 
 .anchorScroll{
@@ -54,3 +67,49 @@
   animation-delay: 2s;
 }
 
+.comparative-photo-image {
+  background-image: url("/images/photos/iphones-bg-comparative-2.png");
+  background-size: cover;
+  transition: all 0.3s ease-in-out;
+  color: white;
+}
+
+.centering {
+  background-position: center;
+}
+
+.bento-cartoon {
+  background-image: url("/images/photos/penguin-image-4-bento.png");
+  background-size: cover;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {  
+  background: #797b7e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffdd01;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #478bde;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+.alegriaContainer {
+  background-image: url("/images/does-it-worth/bg-alegria.png");
+  background-size: cover;
+  background-position: center;
+}

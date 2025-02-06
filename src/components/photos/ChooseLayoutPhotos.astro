@@ -1,0 +1,76 @@
+---
+
+---
+
+<div
+      class="flex flex-row items-center justify-center w-[80%] mx-auto h-[550px]"
+    >
+      <a
+        id="comparative"
+        href="/photos/comparative"
+        class="text-lg w-full h-full font-semibold rounded-tl-xl rounded-bl-xl comparative-photo-image border border-gray-400 hover:shadow-xl text-black transition-shadow flex flex-col items-end justify-center gap-6 pr-24"
+      >
+        <h3 class="text-6xl font-bold font-nunito text-right">Comparative</h3>
+        <p class="text-right text-xl text-pretty  w-[40ch]">
+          Compara las imágenes de diferentes lugares, tomadas por diferentes
+          celulares!
+        </p>
+      </a>
+      <a
+        href="/photos/bento"
+        id="bento"
+        class="text-lg w-full h-full font-semibold rounded-tr-xl rounded-br-xl border bento-cartoon border-gray-400  hover:shadow-xl text-black transition-shadow flex flex-col items-start justify-center gap-6 pl-24"
+      >
+        <h3 class="text-6xl font-bold font-nunito text-center">Bento</h3>
+        <p class="text-left text-xl text-pretty  w-[43ch]">
+          Visualiza las fotos en un formato diferente; imágenes por doquier sin
+          un orden en específico.
+        </p>
+      </a>
+    </div>
+  
+    <script>
+      function hoverEffects() {
+          const bento = document.getElementById("bento");
+      const comparative = document.getElementById("comparative");
+  
+      if(!bento || !comparative) return;
+      
+          bento.addEventListener('mouseover', () => {
+              bento.classList.add('centering');
+          });
+          bento.addEventListener('mouseleave', () => {
+              bento.classList.remove('centering');
+          });
+      
+          comparative.addEventListener('mouseover', () => {
+              comparative.classList.add('centering');
+          });
+          comparative.addEventListener('mouseleave', () => {
+              comparative.classList.remove('centering');
+          });
+      
+          //removing the event listeners
+          
+          bento.removeEventListener('mouseover', () => {
+              bento.classList.add('centering');
+          });
+          bento.removeEventListener('mouseleave', () => {
+              bento.classList.remove('centering');
+          });
+      
+          comparative.removeEventListener('mouseover', () => {
+              comparative.classList.add('centering');
+          });
+          comparative.removeEventListener('mouseleave', () => {
+              comparative.classList.remove('centering');
+          });
+      }
+  
+      hoverEffects();
+  
+      document.addEventListener("astro:after-swap", () => {
+        hoverEffects();
+      });
+  
+    </script>

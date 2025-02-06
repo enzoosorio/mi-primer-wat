@@ -1,0 +1,64 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { Image } from "astro:assets";
+
+type nameDevice = 'iPhone 16' | 'iPhone 15 Pro' | 'Samsung S22 Ultra' | 'InstaxFilm S7';
+
+interface Device {
+    name: nameDevice;
+    image: string;
+    href: string;
+}
+
+
+const devices : Device[] = [
+    {
+        name: "iPhone 16",
+        image: "/images/photos/comparative/iphone-16-back-face.png",
+        href : "/photos/comparative/iphone-16",
+    },
+    {
+        name: "iPhone 15 Pro",
+        image: "/images/photos/comparative/iphone-15-pro-back-face.png",
+        href : "/photos/comparative/iphone-15-pro",
+        
+    },
+    {
+        name: "Samsung S22 Ultra",
+        image: "/images/photos/comparative/s22-ultra-back-face.png",
+        href : "/photos/comparative/s22-ultra",
+    },
+    {
+        name : "InstaxFilm S7",
+        image: "/images/photos/comparative/instax-camera.png",
+        href : "/photos/comparative/instax-camera",
+    }
+]
+
+---
+
+<Layout title="Comparative Photos | Enzo">
+<div class="mt-10 flex flex-col items-center justify-center w-[95%] rounded-lg bg-gray-100/55 gap-16 mx-auto mb-20 p-6 ">    
+        <div class="flex flex-col items-center justify-center gap-6">
+            <h1 class="text-6xl font-robto  ">Comparative Photos</h1>
+            <p class="text-lg font-nunito">Estos son los dispositivos usados para las fotos</p>
+        </div>
+        <div class="flex flex-row items-center justify-center gap-24 ">
+            {devices.map((device, index) => (
+                <div data-tilt class="anchor-card flex flex-col items-center justify-center gap-6 rounded-lg bg-white/75 p-4 shadow-lg hover:shadow-xl transition-all transform-3d perspective-[1000px] w-[200px] min-h-[260px]  pb-10">
+                    <p class={` font-semibold font-nunito translate-z-[20px] text-center ${device.name === "Samsung S22 Ultra" ? "text-base" : "text-xl"}`}>{device.name}</p>
+                    <Image src={device.image} alt={device.name} class=" rounded-lg px-2 object-contain translate-z-[70px]" width={350} height={400} />
+                </div>
+            ))}
+        </div>
+    </div>
+    <div class="pb-32"></div>
+    <script type="text/javascript" src="/src/scripts/vanilla-tilt.js"></script>
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelector(".anchor-card"), {
+            max: 25,
+            speed: 400
+        });
+        
+    </script>
+</Layout>

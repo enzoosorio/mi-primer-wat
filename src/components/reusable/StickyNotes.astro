@@ -1,31 +1,118 @@
 ---
+import CardTailYellow from '../../../public/svgs/Card-tail-yellow.svg'
+
 interface StickyNotesProps {
   title: string;
   bgColor?: string;
   textColor?: string;
+  idStickyNote?: string;
+  titleForDialog?: string;
+  contentForDialog?: string;
 }
 
 const {
   title,
   bgColor = "bg-white",
   textColor = "text-black",
+  idStickyNote,
+  titleForDialog,
+  contentForDialog,
 } = Astro.props as StickyNotesProps;
 ---
 
 <div
-  class={`relative w-[330px] h-[180px] cursor-pointer flex flex-row items-center justify-center rounded-md ${bgColor} ${textColor} `}
+  id={idStickyNote}
+  class={`w-[330px] h-[180px] cursor-pointer flex flex-row items-center justify-center rounded-md ${bgColor} ${textColor} stickyNote`}
+  data-dialog={`dialog-${idStickyNote}`}
 >
   <p class="text-[2.5rem] font-bold font-roboto">{title}</p>
 </div>
+
+<dialog 
+  id={`dialog-${idStickyNote}`} 
+  class={`sticky-dialog font-nunito fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${bgColor} p-3 rounded-lg shadow-lg min-w-[600px] min-h-[500px]`}
+>
+  <nav 
+  class="flex flex-row font-delicious-small-caps items-center justify-between border-b border-gray-900 w-full pb-2"
+  >
+    <p class="text-lg font-semibold">{titleForDialog}</p>
+    <ul class="flex flex-row items-center justify-center gap-8">
+      <li>
+        {title}
+      </li>
+      <li>
+        <button class="close-btn font- bg-white text-black px-4 py-2 cursor-pointer outline-none hover:font-bold transition-all rounded-lg">Cerrar</button>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="w-[98%] mx-auto mt-4 text-pretty ">
+    <p class="text-lg font-semibold">{contentForDialog}</p>
+  </div>
+  
+</dialog>
+
 <script>
-  const stickyNotes = document.querySelectorAll(".stickyNotes");
-  stickyNotes.forEach((stickyNote) => {
-    stickyNote.addEventListener("mouseover", () => {
-      stickyNote.classList.add("bg-white");
+
+  function initStickyNotes() {
+    const stickyNotes = document.querySelectorAll(".stickyNote");
+
+    stickyNotes.forEach((note) => {
+      const dialogId = note.getAttribute("data-dialog");
+      if (!dialogId) return;
+      const dialog = document.getElementById(dialogId) as HTMLDialogElement | null;
+      const closeButton = dialog?.querySelector(".close-btn");
+
+      if (dialog) {
+        note.addEventListener("click", () => {
+          document.body.classList.add("overflow-hidden");
+          dialog.showModal()
+        });
+        closeButton?.addEventListener("click", () => {
+          document.body.classList.remove("overflow-hidden");
+          dialog.close()
+        });
+        dialog.addEventListener("click", (e) => {
+          if (e.target === dialog) {
+            document.body.classList.remove("overflow-hidden");
+            dialog.close()
+          }
+        });
+      }
     });
 
-    stickyNote.addEventListener("mouseleave", () => {
-      stickyNote.classList.remove("bg-white");
+    document.addEventListener("astro:before-swap", () => {
+      stickyNotes.forEach((note) => {
+      const dialogId = note.getAttribute("data-dialog");
+      if (!dialogId) return;
+      const dialog = document.getElementById(dialogId) as HTMLDialogElement | null;
+      const closeButton = dialog?.querySelector(".close-btn");
+
+      if (dialog) {
+        note.removeEventListener("click", () => {
+          document.body.classList.add("overflow-hidden");
+          dialog.showModal()
+        });
+        closeButton?.removeEventListener("click", () => {
+          document.body.classList.remove("overflow-hidden");
+          dialog.close()
+        });
+        dialog.removeEventListener("click", (e) => {
+          if (e.target === dialog) {
+            document.body.classList.remove("overflow-hidden");
+            dialog.close()
+          }
+        });
+      }
     });
-  });
+    });
+
+  }
+
+  initStickyNotes();
+
+  document.addEventListener("astro:after-swap", () => {
+     initStickyNotes();
+  })
+
 </script>
