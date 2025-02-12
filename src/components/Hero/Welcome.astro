@@ -10,11 +10,11 @@ const VALORACION = 3
 ---
 
 <section class="relative w-full my-10 welcomeToMain flex flex-col items-center justify-center gap-12 ">
-    <div transition:animate={fade({ duration: '0.4s' })} class="flex flex-row items-center justify-center gap-24  w-max mx-auto">
-        <div class="flex flex-col justify-end items-end gap-8 ">
-            <h1 class="text-6xl font-bold text-right w-[14ch] tracking-tighter">Work and Travel en Montana</h1>
-            <p class="font-nunito text-lg tracking-tighter w-[40ch] text-right">Un invierno con frío extremo. Paisajes únicos y nuevos amigos de otros países </p>
-            <div class="flex flex-col items-center justify-center gap-4">
+    <div transition:animate={fade({ duration: '0.4s' })} class="flex flex-col  lg:flex-row items-center justify-center gap-24  w-max mx-auto">
+        <div class="flex flex-col justify-end items-end gap-8  ">
+            <h1 class="text-6xl font-bold text-center lg:text-right w-[14ch] tracking-tighter">Work and Travel en Montana</h1>
+            <p class="font-nunito text-lg tracking-tighter w-[40ch] mx-auto lg:mx-0 text-center lg:text-right">Un invierno con frío extremo. Paisajes únicos y nuevos amigos de otros países </p>
+            <div class="flex flex-col items-center justify-center gap-4  mx-auto lg:mx-0" >
                 <p class="text-lg font-nunito">Valoración del viaje</p>
                 <div class="flex flex-row items-center justify-center gap-4">
                     {Array.from({ length: 5 }, (_, i) => i + 1).map((i) => (
@@ -41,10 +41,11 @@ const VALORACION = 3
 
 function scrollToElement(){
     const button = document.querySelector('.animationButtonBounce');
+    let isMobile = window.innerWidth < 768;
   if (button) {
     button.addEventListener("click", () => {
         window.scroll({
-        top: 845,
+        top: isMobile ? 1290 : 845,
         left: 0,
         behavior: 'smooth'
       })
@@ -53,6 +54,15 @@ function scrollToElement(){
       button.classList.add('infinite');
     });
   }
+
+  window.addEventListener("resize", () => {
+    const windowWidth = window.innerWidth;
+    if (windowWidth < 768) {
+      isMobile = true;
+    } else {
+      isMobile = false;
+    }
+  });
 
   document.addEventListener("astro:before-swap", () => {
     button?.removeEventListener("click", () => {

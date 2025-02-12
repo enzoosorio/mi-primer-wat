@@ -22,7 +22,7 @@ const {
 
 <div
   id={idStickyNote}
-  class={`w-[330px] h-[180px] cursor-pointer flex flex-row items-center justify-center rounded-md ${bgColor} ${textColor} stickyNote`}
+  class={`w-[250px] h-[160px] md:w-[330px] md:h-[180px] cursor-pointer flex flex-row items-center justify-center rounded-md ${bgColor} ${textColor} stickyNote`}
   data-dialog={`dialog-${idStickyNote}`}
 >
   <p class="text-[2.5rem] font-bold font-roboto">{title}</p>
@@ -30,7 +30,7 @@ const {
 
 <dialog 
   id={`dialog-${idStickyNote}`} 
-  class={`sticky-dialog font-nunito fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${bgColor} p-3 rounded-lg shadow-lg min-w-[600px] min-h-[500px]`}
+  class={`sticky-dialog font-nunito fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${bgColor} p-3 rounded-lg shadow-lg min-w-[400px] lg:min-w-[600px] min-h-max lg:min-h-[450px] pb-8 `}
 >
   <nav 
   class="flex flex-row font-delicious-small-caps items-center justify-between border-b border-gray-900 w-full pb-2"

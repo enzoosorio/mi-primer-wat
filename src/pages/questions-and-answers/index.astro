@@ -9,9 +9,9 @@ import {BancoPreguntas} from "@components/questions-and-answers/React/BancoPregu
 <Layout title="Preguntas y Respuestas | WAT-O">
     <section class="mt-10 flex flex-col items-center justify-center w-[95%] rounded-lg gap-16 mx-auto mb-20 p-6 min-h-[800px]">
         <QATitle/>
-        <div class="flex flex-row justify-center w-full gap-8 ">
+        <div class="flex flex-col-reverse lg:flex-row justify-center w-full gap-8 ">
             <BancoRespuestas client:visible/>
-            <div class="w-[30%] flex flex-col items-center justify-center gap-6 ">
+            <div class=" w-full lg:w-[30%] flex flex-col items-center justify-center gap-6 ">
                 <BancoPreguntas client:load/>
                 <div class="flex flex-col items-center justify-center gap-4 w-full bg-gray-200/75 rounded-xl p-5 shadow-xl ">
                     <h1 class="text-xl text-center font-delicious-small-caps text-pretty">TAMBIÉN PUEDES ESCRIBIRME EN <p>INSTAGRAM <a class="text-rose" href="https://www.instagram.com/enzoosorioortiz/" target="_blank" rel="noopener noreferrer">@ENZOOSORIOORTIZ</a></p></h1>

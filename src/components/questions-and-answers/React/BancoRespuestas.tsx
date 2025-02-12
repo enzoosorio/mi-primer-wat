@@ -50,7 +50,7 @@ export const BancoRespuestas = () => {
 
 
   return (
-    <div className="w-[70%] bg-gray-200/75 rounded-xl p-3 flex flex-col items-center justify-center gap-8 shadow-xl pb-12 overflow-auto">
+    <div className="w-full lg:w-[70%] bg-gray-200/75 rounded-xl p-3 flex flex-col items-center justify-center gap-8 shadow-xl pb-12 overflow-auto">
       <h1 className="text-3xl font-bold font-nunito mt-6">
         Banco de Respuestas
       </h1>
@@ -58,7 +58,7 @@ export const BancoRespuestas = () => {
       <form className="w-[85%] flex flex-col justify-end items-end gap-2 mb-10 mt-6">
         <label
           htmlFor="coincidencias"
-          className="text-lg font-roboto text-right"
+          className="text-lg font-roboto text-center lg:text-right w-full"
         >
           Búsqueda por coincidencias
         </label>
@@ -66,8 +66,8 @@ export const BancoRespuestas = () => {
           onChange={(e) => setSearchValue(e.target.value)}
           id="coincidencias"
           type="text"
-          className="w-full rounded-lg px-2 py-4 font-roboto text-black bg-white/75 outline-none shadow-md focus:shadow-xl transition-shadow max-w-[400px]"
-          placeholder="Escribe tu pregunta aquí..."
+          className="w-full mx-auto lg:mx-0 rounded-lg px-2 py-4 font-roboto text-black bg-white/75 outline-none shadow-md focus:shadow-xl transition-shadow max-w-[400px]"
+          placeholder="Busca las preguntas aquí..."
         />
       </form>
 

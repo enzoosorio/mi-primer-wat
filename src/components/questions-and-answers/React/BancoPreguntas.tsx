@@ -44,12 +44,12 @@ export const BancoPreguntas = () => {
             <form onSubmit={handleSubmit} id="form-preguntas" className="flex flex-col items-center justify-center gap-8 w-full">
             <div className="w-full flex flex-col items-start justify-start gap-4">
                 <label htmlFor="nombre" className="text-lg font-roboto text-right">Tu nombre</label>
-                <input id="nombre" onChange={(e) => handleChange(e)} type="text" name="usuario" className="w-full rounded-lg px-2 py-4 font-roboto text-black bg-white/75 outline-none shadow-sm max-w-[400px] " placeholder="Escribe tu pregunta aquí..." />
+                <input id="nombre" onChange={(e) => handleChange(e)} type="text" name="usuario" className="w-full rounded-lg px-2 py-4 font-roboto text-black bg-white/75 outline-none shadow-sm lg:max-w-[400px] " placeholder="Escribe tu pregunta aquí..." />
                 {errors.usuario && <p className="text-red-500 text-sm">{errors.usuario}</p>}
             </div>
             <div className="w-full flex flex-col items-start justify-start gap-4">
-                <label htmlFor="tipoPregunta" className="text-lg font-roboto text-right">¿Respuesta pública o privada?</label>
-                <select id="tipoPregunta" name="tipoPregunta" onChange={(e) => handleChange(e)} className="w-full rounded-lg px-2 py-4 font-roboto text-black bg-white/75 outline-none shadow-sm max-w-[400px] ">
+                <label htmlFor="tipoPregunta" className="text-lg font-roboto text-left">¿Respuesta pública o privada?</label>
+                <select id="tipoPregunta" name="tipoPregunta" onChange={(e) => handleChange(e)} className="w-full rounded-lg px-2 py-4 font-roboto text-black bg-white/75 outline-none shadow-sm  lg:max-w-[400px] ">
                     <option value="publico">Público</option>
                     <option value="privado">Privado</option>
                 </select>

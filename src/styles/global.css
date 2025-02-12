@@ -40,6 +40,9 @@
 .headerBgGradientDark {
   background-color: rgba(19, 140, 151, 0.8);
 }
+.headerBgGradientDarkMobile {
+  background-color: rgba(60, 196, 208, 0.8);
+}
 
 .footerBgGradientDark {
   background-color: rgba(19, 140, 151, 0.977);
@@ -182,4 +185,52 @@
 .scrollNone::-webkit-scrollbar-track{
   display: none;
   /* opacity: 0; */
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Dynamic columns */
+  gap: 10px;
+  grid-auto-rows: auto; 
+  grid-auto-flow: dense;
+  max-width: 100%;
+}
+
+.Square{
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.Wide{
+  grid-column: span 2;
+}
+
+.Tall{
+  grid-row: span 2;
+}
+
+no-scrollbar::-webkit-scrollbar {
+  display: none;
+  opacity: 0;
+}
+no-scrollbar::-webkit-scrollbar-track{
+  display: none;
+  opacity: 0;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE and Edge */
+.no-scrollbar {
+  -ms-overflow-style: none;
+}
+
+dialog {
+  display: none; /* Oculta el diálogo por defecto */
+}
+
+dialog[open] {
+  display: block; /* Muestra el diálogo cuando tiene el atributo "open" */
 }

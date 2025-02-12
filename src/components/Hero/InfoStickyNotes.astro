@@ -60,11 +60,11 @@ const stickyNotes = [
 ---
 
 <section
-  class="relativew-full flex flex-col items-center justify-center  mt-56 mb-40 welcomeToMain"
+  class="relative w-full flex flex-col items-center justify-center mt-56 mb-40 mx-auto welcomeToMain"
 >
   <h1 class="w-max mx-auto text-5xl  font-delicious-small-caps">¡Dale click y conoce más!</h1>
   <div
-    class="relative w-[1228px] flex flex-row items-center justify-center flex-wrap gap-16 my-20"
+    class="relative max-w-[1228px] mx-auto flex flex-row flex-wrap items-center justify-center gap-12 my-20 w-full"
   >
     {stickyNotes.map((stickyNote, index) => <StickyNotes {...stickyNote} idStickyNote={`stickyNote-${index}`} />)}
   </div>
